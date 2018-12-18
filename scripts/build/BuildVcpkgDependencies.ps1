@@ -23,6 +23,7 @@ $packages += "boost-program-options"
 $packages += "boost-python"
 $packages += "boost-system"
 $packages += "tbb"
+#$packages += "opensubdiv"
 
 $exports = $packages | % { $_ + ":x64-windows-static" }
 

@@ -107,8 +107,7 @@ if(NOT TBB_FOUND)
   if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
     set(TBB_DEFAULT_SEARCH_DIR "C:/Program Files/Intel/TBB"
                                "C:/Program Files (x86)/Intel/TBB")
-    # TODO: Set the proper suffix paths based on compiler introspection.
-  
+    set(TBB_LIB_PATH_SUFFIX "lib")
   elseif(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
     # OS X
     set(TBB_DEFAULT_SEARCH_DIR "/opt/intel/tbb")

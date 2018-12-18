@@ -1,2 +1,12 @@
 # Build directories
+bin/
+obj/
+ipch/
+**/packages/
+.tools/
+**/TestResults
+**/.vs
+**/.vscode
+
+# Script temp directories
 scripts/build/vcpkg
