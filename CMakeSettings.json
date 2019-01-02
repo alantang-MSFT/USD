@@ -1,0 +1,90 @@
+{
+  "configurations": [
+    {
+      "name": "Release",
+      "generator": "Visual Studio 15 2017 Win64",
+      "configurationType": "Release",
+      "variables": [
+        {
+          "name": "CMAKE_INSTALL_PREFIX",
+          "value": "${workspaceRoot}"
+        },
+        {
+          "name": "PXR_BUILD_MAYA_PLUGIN",
+          "value": "true"
+        },
+        {
+          "name": "TBB_ROOT_DIR",
+          "value": "${workspaceRoot}/temp"
+        },
+        {
+          "name": "BOOST_ROOT",
+          "value": "${workspaceRoot}/temp"
+        },
+        {
+          "name": "OPENEXR_LOCATION",
+          "value": "${workspaceRoot}/temp"
+        },
+        {
+          "name": "GLEW_LOCATION",
+          "value": "${workspaceRoot}/temp"
+        },
+        {
+          "name": "PTEX_LOCATION",
+          "value": "${workspaceRoot}/temp"
+        },
+        {
+          "name": "OPENSUBDIV_ROOT_DIR",
+          "value": "${workspaceRoot}/temp"
+        },
+        {
+          "name": "MAYA_LOCATION",
+          "value": "${workspaceRoot}/temp/mayasdk"
+        }
+      ]
+    },
+    {
+      "name": "Debug",
+      "generator": "Visual Studio 15 2017 Win64",
+      "configurationType": "Debug",
+      "variables": [
+        {
+          "name": "CMAKE_INSTALL_PREFIX",
+          "value": "${workspaceRoot}"
+        },
+        {
+          "name": "PXR_BUILD_MAYA_PLUGIN",
+          "value": "true"
+        },
+        {
+          "name": "TBB_ROOT_DIR",
+          "value": "${workspaceRoot}/temp"
+        },
+        {
+          "name": "BOOST_ROOT",
+          "value": "${workspaceRoot}/temp"
+        },
+        {
+          "name": "OPENEXR_LOCATION",
+          "value": "${workspaceRoot}/temp"
+        },
+        {
+          "name": "GLEW_LOCATION",
+          "value": "${workspaceRoot}/temp"
+        },
+        {
+          "name": "PTEX_LOCATION",
+          "value": "${workspaceRoot}/temp"
+        },
+        {
+          "name": "OPENSUBDIV_ROOT_DIR",
+          "value": "${workspaceRoot}/temp"
+        },
+        {
+          "name": "MAYA_LOCATION",
+          "value": "${workspaceRoot}/temp/mayasdk"
+        }
+      ]
+    }
+  ]
+}

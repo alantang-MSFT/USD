@@ -111,6 +111,8 @@ if (${PXR_BUILD_DOCUMENTATION})
         DIRECTORY ${BUILT_XML_DOCS}
         DESTINATION ${INST_DOCS_ROOT}
     )
-endif()   
+endif()
 
 pxr_toplevel_epilogue()
+
+set_property(DIRECTORY PROPERTY VS_STARTUP_PROJECT "_usd.pyd")

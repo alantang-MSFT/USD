@@ -1,0 +1,4 @@
+Source: opensubdiv
+Version: 3.1.1
+Description: An Open-Source subdivision surface library.
+Build-Depends: tbb, glew, ptex
