@@ -1,5 +1,8 @@
 project(usd)
 
+#target_link_libraries(python27 PUBLIC c:/python27/libs)
+link_directories(c:/python27/libs)
+
 if (WIN32)
     cmake_minimum_required(VERSION 3.1.1)
 else()
