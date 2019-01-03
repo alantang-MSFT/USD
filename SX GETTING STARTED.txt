@@ -1,0 +1,62 @@
+Manual Installs
+===============
+- Git
+  https://git-scm.com/download/win
+
+- Visual Studio
+
+- Maya SDK
+  Technically, this is not shipped standalone. Also, USD build checks for the existence of Maya.exe, but doesn't
+  actually need a full Maya install to build successfully. I've packaged all the needed files here:
+
+  \\analogfs\private\Scratch\ALANTANG\Maya2018SDK  
+
+  Copy these locally (I'll assume c:\Maya2018SDK)
+
+- Python 2.7.15
+  https://www.python.org/downloads/release/python-2715/
+
+  Assuming install path is c:\python27, run from CMD
+    set PATH=%PATH%;c:\python27;c:\python27\scripts
+    pip install PySide
+    pip install PyOpenGL
+
+- CMake 3.13
+  https://cmake.org/download/
+
+Enabling Debug Build
+====================
+Clone:
+  https://github.com/alantang-MSFT/USD.git
+
+Checkout "debug" branch
+
+There is a bug in c:\python27\include\pyconfig.h that causes the linker to look for python27_d.lib. I've checked
+this file in at ./sx_prereq. Copy this file to c:\python27\libs.
+
+Then open pyconfig.h and look for this code:
+
+  #ifdef _DEBUG
+  #  define Py_DEBUG
+  #endif
+
+Comment out the Py_DEBUG define.
+
+Finally, open ./CMakeLists.txt. At the beginning of the file is a "link_directories". Ensure the path corresponds
+to the 'libs' sub-directory of your python install dir (c:\python27\libs).
+
+Build
+=====
+cd <REPO_ROOT>\build_scripts
+python build_usd.py -v --build-debug --maya --maya-location c:\Maya2018SDK c:\sxusd2-bin
+
+Installing the Maya Plugin
+==========================
+Once successfully built, binaries can be found at c:\sxusd2-bin\third_party\maya\plugin.
+
+In this file C:\Users\alantang\Documents\maya\2018\Maya.env, add these lines:
+
+    MAYA_PLUG_IN_PATH=c:\sxusd2-bin\third_party\maya\plugin
+    MAYA_SCRIPT_PATH=c:\sxusd2-bin\third_party\maya\lib\usd\usdMaya\resources
+    PYTHONPATH=c:\sxusd2-bin\lib\python
+    XBMLANGPATH=c:\sxusd2-bin\third_party\maya\lib\usd\usdMaya\resources
