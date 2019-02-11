@@ -48,15 +48,21 @@ to the 'libs' sub-directory of your python install dir (c:\python27\libs).
 Build
 =====
 cd <REPO_ROOT>\build_scripts
-python build_usd.py -v --build-debug --maya --maya-location c:\Maya2018SDK c:\sxusd2-bin
+python build_usd.py -v --build-debug --maya --maya-location c:\Maya2018SDK c:\sxusd-bin
 
 Installing the Maya Plugin
 ==========================
-Once successfully built, binaries can be found at c:\sxusd2-bin\third_party\maya\plugin.
+Once successfully built, binaries can be found at c:\sxusd-bin.
 
-In this file C:\Users\alantang\Documents\maya\2018\Maya.env, add these lines:
+In this file C:\Users\<USERNAME>\Documents\maya\2018\Maya.env, add these lines:
 
-    MAYA_PLUG_IN_PATH=c:\sxusd2-bin\third_party\maya\plugin
-    MAYA_SCRIPT_PATH=c:\sxusd2-bin\third_party\maya\lib\usd\usdMaya\resources
-    PYTHONPATH=c:\sxusd2-bin\lib\python
-    XBMLANGPATH=c:\sxusd2-bin\third_party\maya\lib\usd\usdMaya\resources
+    MAYA_PLUG_IN_PATH=c:\sxusd-bin\third_party\maya\plugin
+    MAYA_SCRIPT_PATH=c:\sxusd-bin\third_party\maya\lib\usd\usdMaya\resources
+    PYTHONPATH=c:\sxusd-bin\lib\python
+    XBMLANGPATH=c:\sxusd-bin\third_party\maya\lib\usd\usdMaya\resources
+
+Add the following to your system path:
+  
+    C:\sxusd-bin\lib
+    C:\sxusd-bin\bin
+    C:\sxusd-bin2\third_party\maya\lib
